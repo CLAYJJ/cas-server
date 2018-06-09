@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sso.cas.server.mapper.CasUserMapper">
+
+    <resultMap id="casUserResultMap" type="com.sso.cas.server.model.CasUser">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="user_password" property="userPassword" jdbcType="VARCHAR"/>
+        <result column="create_user" property="createUser" jdbcType="VARCHAR"/>
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="modify_user" property="modifyUser" jdbcType="VARCHAR"/>
+        <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="insert">
+         insert into user(id, user_name, user_password, create_user, create_date, modify_user, modify_date, del_flag)
+        values (#{id}, #{userName}, #{userPassword}, #{createUser}, #{createDate}, #{modifyUser}, #{modifyDate}, #{delFlag})
+    </insert>
+
+
+    <select id="findAll" resultMap="casUserResultMap">
+        select * from user where del_flag='0'
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="cas-server" />
+    <!--组播地址-->
+    <dubbo:registry address="multicast://224.5.6.7:1234"/>
+    <!--对外暴露的服务所在包路径-->
+    <dubbo:annotation package="com.sso.cas.server.service"/>
+
+
+
+</beans>
