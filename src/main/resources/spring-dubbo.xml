@@ -7,7 +7,9 @@
 
     <dubbo:application name="cas-server" />
     <!--组播地址-->
-    <dubbo:registry address="multicast://224.5.6.7:1234"/>
+    <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+    <!--zookeeper注册地址-->
+    <dubbo:registry address="zookeeper://192.168.1.8:2181" client="zkclient"/>
     <!--对外暴露的服务所在包路径-->
     <dubbo:annotation package="com.sso.cas.server.service"/>
 

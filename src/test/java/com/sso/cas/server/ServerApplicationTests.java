@@ -2,6 +2,7 @@ package com.sso.cas.server;
 
 import com.sso.cas.server.mapper.CasUserMapper;
 import com.sso.cas.server.model.CasUser;
+import com.sso.cas.server.service.CasUserInterface;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import java.util.UUID;
 public class ServerApplicationTests {
 
     @Autowired
-    private CasUserMapper casUserMapper;
+    private CasUserInterface casUserInterface;
 
     @Test
     public void contextLoads() {
@@ -28,7 +29,7 @@ public class ServerApplicationTests {
         casUser.setCreateDate(new Date());
         casUser.setDelFlag("0");
         casUserMapper.insert(casUser);*/
-        List<CasUser> list = casUserMapper.findAll();
+        List<CasUser> list = casUserInterface.findAll();
         System.out.println(list);
     }
 
