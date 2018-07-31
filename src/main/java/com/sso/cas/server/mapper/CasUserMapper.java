@@ -10,4 +10,6 @@ public interface CasUserMapper {
     void insert(CasUser casUser);
 
     List<CasUser> findAll();
+
+    CasUser findUserByname(String name);
 }

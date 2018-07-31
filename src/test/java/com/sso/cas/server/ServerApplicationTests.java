@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
@@ -19,18 +20,22 @@ public class ServerApplicationTests {
 
     @Autowired
     private CasUserInterface casUserInterface;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private BeanTest beanTest;
 
     @Test
     public void contextLoads() {
         /*CasUser casUser = new CasUser();
         casUser.setId(UUID.randomUUID().toString());
         casUser.setUserName("luojiajia");
-        casUser.setUserPassword("ljj123");
+        casUser.setUserPassword(passwordEncoder.encode("ljj123"));
         casUser.setCreateDate(new Date());
         casUser.setDelFlag("0");
-        casUserMapper.insert(casUser);*/
-        List<CasUser> list = casUserInterface.findAll();
-        System.out.println(list);
+        casUserInterface.insert(casUser);*/
+        //List<CasUser> list = casUserInterface.findAll();
+        //System.out.println(list);
     }
 
 }

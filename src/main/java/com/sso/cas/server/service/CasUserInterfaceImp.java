@@ -24,4 +24,9 @@ public class CasUserInterfaceImp implements CasUserInterface {
     public List<CasUser> findAll() {
         return casUserMapper.findAll();
     }
+
+    @Override
+    public CasUser findUserByname(String name) {
+        return casUserMapper.findUserByname(name);
+    }
 }

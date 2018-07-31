@@ -10,4 +10,6 @@ public interface CasUserInterface {
 
     List<CasUser> findAll();
 
+    CasUser findUserByname(String name);
+
 }
